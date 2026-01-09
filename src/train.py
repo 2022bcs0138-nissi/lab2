@@ -38,5 +38,15 @@ metrics = {
     "r2": r2
 }
 
+summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+if summary_path:
+    with open(summary_path, "a") as f:
+        f.write("## Model Evaluation Results\n")
+        f.write(f"**Name:** Nissi Veronika Y\n")
+        f.write(f"**Roll No:** 2022BCS0138\n\n")
+        f.write(f"- Mean Squared Error (MSE): {mse}\n")
+        f.write(f"- R² Score: {r2}\n")
+
+
 with open("outputs/results/metrics.json", "w") as f:
     json.dump(metrics, f)
