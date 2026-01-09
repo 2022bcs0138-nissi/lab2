@@ -41,11 +41,15 @@ metrics = {
 summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
 if summary_path:
     with open(summary_path, "a") as f:
-        f.write("## Model Evaluation Results\n")
-        f.write(f"**Name:** Nissi Veronika Y\n")
-        f.write(f"**Roll No:** 2022BCS0138\n\n")
-        f.write(f"- Mean Squared Error (MSE): {mse}\n")
-        f.write(f"- R² Score: {r2}\n")
+        f.write("## Model Evaluation Results\n\n")
+        f.write("**Name:** Nissi Veronika Y  \n")
+        f.write("**Roll No:** 2022BCS0138\n\n")
+
+        f.write("| Metric | Value |\n")
+        f.write("|--------|-------|\n")
+        f.write(f"| Mean Squared Error (MSE) | {mse:.4f} |\n")
+        f.write(f"| R² Score | {r2:.4f} |\n")
+
 
 
 with open("outputs/results/metrics.json", "w") as f:
