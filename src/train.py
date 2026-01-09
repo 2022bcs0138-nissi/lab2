@@ -1,6 +1,8 @@
 import json
 import joblib
 import pandas as pd
+import os
+
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -25,6 +27,9 @@ r2 = r2_score(y_test, y_pred)
 
 print(f"MSE: {mse}")
 print(f"R2: {r2}")
+
+os.makedirs("outputs/model", exist_ok=True)
+os.makedirs("outputs/results", exist_ok=True)
 
 joblib.dump(model, "outputs/model/model.joblib")
 
