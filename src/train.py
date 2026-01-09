@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
-df = pd.read_csv("data/winequality-red.csv", sep=";")
+df = pd.read_csv("data/winequality-red.csv", sep=",")
 df.columns = df.columns.str.strip().str.lower()
 
 X = df.drop("quality", axis=1)
